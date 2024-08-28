@@ -5,7 +5,7 @@ const person ={
   }
   
   person.toString = () =>{
-    return `Name: ${person.firstName}${person.lastName} age: ${person.age}`
+    return `Name: ${person.firstName} ${person.lastName} age: ${person.age}`
   }
   
   console.log(String(person))
