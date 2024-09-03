@@ -8,7 +8,7 @@ const users = [
     username: "Nil Armstrong",
     lang: "ENG",
     isAstronaut: true,
-},
+}, 
 {
     username: "Elon Musk",
     isAstronaut: false,
