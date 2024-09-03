@@ -10,7 +10,7 @@ const users = [
 ];
 
 function getUserName(arr =[]){
-    const newArr = users.map((item)=> item.username )
+    const newArr = arr.map((item)=> item.username )
     return newArr
 }
 
