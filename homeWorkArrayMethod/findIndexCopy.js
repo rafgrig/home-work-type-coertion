@@ -1,9 +1,13 @@
-const numbers = [1,2,3,4]
-
-function myForEach(array, callback) {
-    for (let i = 0; i < array.length; i++) {
-      callback(array[i], i, array);
-    }
+function MyFingIndex(array, callback) {
+  for (let i = 0; i < array.length; i++) {
+      if (callback(array[i], i, array)) {
+          return i;
+      }
   }
-  
-  myForEach(numbers, (number, index, array)=>{console.log(number);});
+
+  return undefined
+}
+
+const findIndex = MyFingIndex(numbers, element => element > 2)
+
+console.log(findIndex)
