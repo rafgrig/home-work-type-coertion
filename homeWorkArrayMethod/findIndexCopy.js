@@ -1,3 +1,5 @@
+const numbers = [1,2,3,4,5]
+
 function MyFingIndex(array, callback) {
   for (let i = 0; i < array.length; i++) {
       if (callback(array[i], i, array)) {
