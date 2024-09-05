@@ -66,6 +66,10 @@ const evaluations = [
     }
 ]
 
+
+
+
+
 function getLowestScore(arr=[]){
     const lowestScore = arr.reduce((acc, item) => {
         return item.score < acc ? item.score : acc;
@@ -99,3 +103,20 @@ function getGoodStudents(arr=[]){
 }
 
 console.log(getGoodStudents(evaluations))
+
+function getAveregeLessFourty(arr=[]){
+    const objectOfAverege = arr.reduce((acc, item)=>{
+        acc[item.studentName] = Math.floor(((acc[item.studentName] ?? item.score) + item.score)/3)
+        return acc
+    }, {})
+
+        const entries= Object.entries(objectOfAverege)
+   const notSorted= entries.filter((item)=>{
+    
+    if(item[1] < 40)return true
+   })
+        const sorted = notSorted.map((item)=>item[0])
+    return sorted
+}
+
+console.log(getAveregeLessFourty(evaluations))
