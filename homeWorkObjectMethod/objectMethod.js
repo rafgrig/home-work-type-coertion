@@ -90,3 +90,12 @@ function getWorstStudent(arr=[]){
 }
 
 console.log(getWorstStudent(evaluations))
+
+function getGoodStudents(arr=[]){
+    let goodStudents = arr.filter((item)=>{
+        if(item.score>60)return true
+    })
+    return goodStudents[0].studentName
+}
+
+console.log(getGoodStudents(evaluations))
