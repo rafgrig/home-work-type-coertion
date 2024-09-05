@@ -76,3 +76,17 @@ function getLowestScore(arr=[]){
 
 console.log(getLowestScore(evaluations))
 
+
+function getWorstStudent(arr=[]){
+    let worstStudentObj = arr.reduce((acc, item)=>{
+        if(item.score < acc.score){
+           return item
+        } else{
+            return acc
+        }
+        
+    }, arr[0])
+    return worstStudentObj.studentName
+}
+
+console.log(getWorstStudent(evaluations))
