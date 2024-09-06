@@ -82,3 +82,13 @@ function getGoodEarn(arr=[]){
 }
 
 console.log("count of all payments that are more than 1500:",getGoodEarn(payments) )
+
+function getAveregeOfPayments(arr=[]){
+    let averegeOfPayments = arr.reduce((acc, item)=>{
+        acc = Math.floor((acc + item.payedAmount)/arr.length)
+        return acc
+    }, 0)
+    return averegeOfPayments
+}
+
+console.log("averege of all payments:", getAveregeOfPayments(payments))
