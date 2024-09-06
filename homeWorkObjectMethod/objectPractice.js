@@ -72,3 +72,13 @@ function getSumOfPayments(arr=[]){
 }
 
 console.log("sum of payments: ", getSumOfPayments(payments))
+
+function getGoodEarn(arr=[]){
+    let goodEarn = arr.reduce((acc, item)=>{
+        if(item.payedAmount>1500)acc+=1
+        return acc
+    }, 0)
+    return goodEarn
+}
+
+console.log("count of all payments that are more than 1500:",getGoodEarn(payments) )
