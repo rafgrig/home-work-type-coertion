@@ -120,3 +120,16 @@ function getAveregeLessFourty(arr=[]){
 }
 
 console.log(getAveregeLessFourty(evaluations))
+
+
+function getAveregeAndCourse(arr=[]){
+    const objOfCourseAndScore = arr.filter(item => item.courseName)
+    .map(({ courseName, score }) => ({ courseName, score }));
+    let r = objOfCourseAndScore.reduce((acc,item)=>{
+        acc[item.courseName]=  Math.floor(((acc[item.courseName] ?? item.score) + item.score)/3)
+        return acc
+       }, [])
+    return r
+}
+
+console.log(getAveregeAndCourse(evaluations))
