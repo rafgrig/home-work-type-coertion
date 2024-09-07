@@ -92,3 +92,28 @@ function getAveregeOfPayments(arr=[]){
 }
 
 console.log("averege of all payments:", getAveregeOfPayments(payments))
+
+let uniqueStudents = {};
+payments.forEach(item => {
+  if (!uniqueStudents[item.studentId]) {
+    uniqueStudents[item.studentId] = true;
+  }
+});
+const studentCount = Object.keys(uniqueStudents).length;
+
+function getTotalSum(arr=[]){
+    let totalSum = arr.reduce((acc, item)=>{
+        acc[item.studentName] = (acc[item.studentName] ?? item.payedAmount) + item.payedAmount
+        return acc
+    }, {})
+
+    let unSortedArr = arr.map((item)=>{
+        return[item.studentId, item.studentName, totalSum[item.studentName]]
+    })
+
+    let sortedArr = [unSortedArr[0],unSortedArr.at(-1)]
+
+    return sortedArr
+}
+
+console.log(getTotalSum(payments))
