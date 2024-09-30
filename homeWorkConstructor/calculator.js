@@ -5,7 +5,7 @@ Calculator.prototype={
     add(firstNumber, secondNumber){
         firstNumber + secondNumber
     },
-    sumtract(firstNumber, secondNumber){
+    subtract(firstNumber, secondNumber){
         firstNumber - secondNumber
     },
     multiply(firstNumber, secondNumber){
