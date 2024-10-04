@@ -14,10 +14,8 @@ Car.prototype = {
         this.odometr += distance
         this.tank -= (this.odometr*this.milesPerGallon)
         }
-        if(this.tank < -1){
-            // this.tank=0
-            return  `You cannot drive this distance`
-        }else if(this.tank === 0) return  `I ran out fuel at ${this.odometr} miles`
+      
+        if(this.tank === 0) return  `I ran out fuel at ${this.odometr} miles`
     }
 
 }
